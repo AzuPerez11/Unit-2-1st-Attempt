@@ -16,7 +16,14 @@ FSJS project 2 - List Filter and Pagination
    will only be used inside of a function, then it can be locally 
    scoped to that function.
 ***/
+const form = document.getElementById('Filetring');
+const input = document.querySelectorAll('input');
+const ul = document.querySelector("student-list");
+const li = document.createElement('li');
 
+const button = document.createElement('button');
+button.textContent = 'search';
+li.appendChild(button); //this block currently doesn't do anything.
 
 
 
