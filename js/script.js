@@ -19,13 +19,12 @@ FSJS project 2 - List Filter and Pagination
 const form = document.getElementById('Filetring');
 const input = document.querySelectorAll('input');
 const ul = document.querySelector("student-list");
-const li = document.createElement('li');
+const li = document.querySelectorAll(".student-item");
 
-const button = document.createElement('button');
-button.textContent = 'search';
-li.appendChild(button); //this block currently doesn't do anything.
-
-
+const div = document.createElement('div');
+div.className ="student-search";
+const pageHeader = document.querySelector('.page-header');
+pageHeader.appendChild(div);
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -41,9 +40,11 @@ li.appendChild(button); //this block currently doesn't do anything.
        that will be passed into the parens later when you call or 
        "invoke" the function 
 ***/
-
-
-
+const showPage = (list, page) => {
+   const lis = ul.children;
+     for (let i=0; i<9; i +=1){
+       let li =lis[i];
+};
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 

@@ -4,7 +4,6 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Students</title>
-    <
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/design.css">
   </head>
@@ -13,7 +12,10 @@
       <div class="page-header cf">
         <h2>Students</h2>
         <!-- dynamically insert search form here (optional) -->
-        <input type="text" name="name" placeholder="Search for a Student">
+        <div class = "student-search">
+         <input placeholder = "Search for a Student">
+        <button>Search</button>
+        </div>
       </div>
       <ul class="student-list">
         <li class="student-item cf">
@@ -558,8 +560,7 @@
         </li>
       </ul>
       <!-- dynamically add pagination links here -->
-    <form id="Filtering"></form>
-    <button type="submit" name="NextPage" value="filter">Next Page</button>
+
     </div>
     <script src="js/script.js"></script>
   </body>
