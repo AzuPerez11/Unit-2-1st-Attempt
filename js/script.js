@@ -18,7 +18,7 @@ FSJS project 2 - List Filter and Pagination
 ***/
 const form = document.getElementById('Filetring');
 const input = document.querySelectorAll('input');
-const ul = document.querySelector("student-list");
+const ul = document.querySelector(".student-list");
 const li = document.querySelectorAll(".student-item");
 
 const div = document.createElement('div');
@@ -41,16 +41,21 @@ pageHeader.appendChild(div);
        "invoke" the function 
 ***/
 const showPage = (list, page) => {
-   const lis = ul.children;
-     for (let i=0; i<9; i +=1){
-       let li =lis[i];
-};
+   const firstIndex = (page * 10) - 10;
+   const lastIndex = (page * 10) - 1; 
+   if (//index of a list item// >= firstIndex){
+      display
+} else 
+   }
 
+
+     for (let i=0; i<list.length; i +=1){
+     }
+     };
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
 ***/
-
 
 
 
