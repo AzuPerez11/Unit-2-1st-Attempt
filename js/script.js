@@ -16,14 +16,16 @@ FSJS project 2 - List Filter and Pagination
    will only be used inside of a function, then it can be locally 
    scoped to that function.
 ***/
-const form = document.getElementById('Filetring');
-const input = document.querySelectorAll('input');
-const ul = document.querySelector(".student-list");
-const li = document.querySelectorAll(".student-item");
-
+let shorterList = document.querySelectorAll(".student-item");
+const studentList = document.querySelector(".student-list");
+const page = document.querySelector('.page');
+const ul = document.createElement ('ul');
 const div = document.createElement('div');
-div.className ="student-search";
 const pageHeader = document.querySelector('.page-header');
+const li = document.createElement('li');
+const a = document.createElement ('a');
+
+div.className ="student-search";
 pageHeader.appendChild(div);
 
 /*** 
@@ -41,21 +43,39 @@ pageHeader.appendChild(div);
        "invoke" the function 
 ***/
 const showPage = (list, page) => {
-   const firstIndex = (page * 10) - 10;
-   const lastIndex = (page * 10) - 1; 
-   if (//index of a list item// >= firstIndex){
-      display
-} else 
-   }
+   const firstItem = (page * 10) - 10;
+   const lastItem = (page * 10) - 1; 
+   for (let i=0; i<list.length; i ++) {
+      if (i >= firstItem && i <= lastItem){
+      list[i].style.display = "block"; 
+       } else {
+          list[i].style.display = "none";
+       }
+      }
+   };   
 
-
-     for (let i=0; i<list.length; i +=1){
-     }
-     };
+   showPage(shorterList, 1);
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
 ***/
+const appendPageLinks = (list) => {
+   let pageNumbers = Math.round(list.length / 10);
+div.className = "pagination";
+page.appendChild(div);
+div.appendChild(ul);
+};
+for (let i = 1; i <= pageNumbers.length; i++){
+   ul.appendChild(li);
+   li.appendChild(a);
+   a.textContent = i;
+   a.addEventListener('click', (e) => {
+      const eachA = document.querySelectorAll("a");
+      showPage(list, i);
+      const button = e.target;
+   })
+
+};
 
 
 
