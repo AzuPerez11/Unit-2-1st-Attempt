@@ -64,7 +64,7 @@ const appendPageLinks = (list) => {
 div.className = "pagination";
 page.appendChild(div);
 div.appendChild(ul);
-};
+
 for (let i = 1; i <= pageNumbers.length; i++){
    ul.appendChild(li);
    li.appendChild(a);
@@ -75,9 +75,15 @@ for (let i = 1; i <= pageNumbers.length; i++){
       const button = e.target;
    })
 
+     if (event.target.tagName === 'a')
+      for (let i=1; i <= eachA.length; i++){
+        eachA[i].classList.remove("active");
+      }
+        a.target.tagName = "active";
+     
+   }
+ 
 };
-
-
-
+appendPageLinks(shorterList);
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
