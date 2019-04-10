@@ -16,15 +16,11 @@ FSJS project 2 - List Filter and Pagination
    will only be used inside of a function, then it can be locally 
    scoped to that function.
 ***/
-let shorterList = document.querySelectorAll(".student-item");
+
 const studentList = document.querySelector(".student-list");
-const page = document.querySelector('.page');
-const ul = document.createElement ('ul');
+let shorterList = studentList.querySelectorAll("li.student-item");
 const div = document.createElement('div');
 const pageHeader = document.querySelector('.page-header');
-const li = document.createElement('li');
-const a = document.createElement ('a');
-
 div.className ="student-search";
 pageHeader.appendChild(div);
 
@@ -52,7 +48,7 @@ const showPage = (list, page) => {
           list[i].style.display = "none";
        }
       }
-   };   
+   }   
 
    showPage(shorterList, 1);
 /*** 
@@ -60,30 +56,37 @@ const showPage = (list, page) => {
    functionality to the pagination buttons.
 ***/
 const appendPageLinks = (list) => {
-   let pageNumbers = Math.round(list.length / 10);
+   let pageNumbers = Math.ceil(list.length / 10);
+   const page = document.querySelector('.page');
+   const ul = document.createElement ('ul');
 div.className = "pagination";
 page.appendChild(div);
 div.appendChild(ul);
 
-for (let i = 1; i <= pageNumbers.length; i++){
+for (let i = 1; i <= pageNumbers; i++){
+   const li = document.createElement('li');
+   const a = document.createElement ('a');
    ul.appendChild(li);
    li.appendChild(a);
    a.textContent = i;
    a.addEventListener('click', (e) => {
-      const eachA = document.querySelectorAll("a");
       showPage(list, i);
-      const button = e.target;
-   })
+      const eachA = document.querySelectorAll("a");
 
-     if (event.target.tagName === 'a')
-      for (let i=1; i <= eachA.length; i++){
-        eachA[i].classList.remove("active");
-      }
-        a.target.tagName = "active";
+      
+  if (event.target.tagName === 'a')
+   for (let i=0; i < eachA.length; i++){
+     eachA[i].classList.remove("active");
+   }
+     e.target.className = "active";
+      //Something is wrong here. The buttons are kept highlighted after they've been clicked. 
+   })
      
    }
  
 };
 appendPageLinks(shorterList);
+
+
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
