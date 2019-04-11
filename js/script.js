@@ -48,7 +48,7 @@ for (let i = 1; i <= pageNumbers; i++){
    a.addEventListener('click', (e) => {
       showPage(list, i);
       const eachA = document.querySelectorAll("a");
-// This snipit highlights the button belonging to the page that is currently active and unhighlights it when the page is no longer being viewed. 
+// This block highlights the button belonging to the page that is currently active and unhighlights it when the page is no longer being viewed. 
    for (let i=0; i < eachA.length; i++){
      eachA[i].classList.remove("active");
    }
